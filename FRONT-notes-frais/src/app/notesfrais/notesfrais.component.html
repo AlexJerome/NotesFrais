@@ -1,0 +1,26 @@
+<div class="container"> 
+  <button type="button" class="btn btn-outline-primary btn-block" routerLink = '/create'>Créer une note</button> 
+<div>
+
+<div class = "container" >
+  <table class="table table-hover">
+    <thead class= "thead-dark">
+      <tr>
+        <th>Nom</th>
+        <th>Montant</th>
+        <th>Devise</th>
+        <th>Date</th>
+        <th>Statut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let notefrais of this.notefraisService.notesfrais" routerLink = '/detail/{{notefrais._id}}'>
+        <td> {{notefrais.nom}} </td>
+        <td> {{notefrais.montant}}</td>
+        <td> {{notefrais.devise}}</td>
+        <td> {{notefrais.datenote | date : 'short'}}</td>
+        <td> {{statutfonction(notefrais.statut)}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

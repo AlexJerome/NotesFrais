@@ -1,0 +1,27 @@
+
+<button type="button" class="btn btn-danger float-right" (click)="deleteNoteFrais()" routerLink = "/liste-notes" >Supprimer</button>
+
+<table *ngIf="notefrais" class="table table-striped ">
+  <tbody>
+    <tr>
+      <th scope = "row" (click) = "fonctiontest()"> Nom </th>
+      <td> {{notefrais.nom}} </td>
+    </tr>
+    <tr>
+        <th scope = "row"> Date </th>
+        <td> {{notefrais.datenote | date : 'short'}} </td>
+      </tr>
+    <tr>
+      <th scope = "row"> Montant </th>
+      <td> {{notefrais.montant}} {{notefrais.devise}} </td>
+    </tr>
+    <tr>
+        <th scope = "row"> Commentaire </th>
+        <td> {{notefrais.commentaire}} </td>
+    </tr>
+    <tr>
+        <th scope = "row"> Statut </th>
+        <td> {{statutfonction(notefrais.statut)}} </td>
+    </tr>
+  </tbody>
+</table>
